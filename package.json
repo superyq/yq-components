@@ -1,11 +1,13 @@
 {
-  "name": "yq",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@yqcoder/components",
+  "version": "1.0.4",
+  "private": false,
+  "main": "dist/npm.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name npm examples/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
