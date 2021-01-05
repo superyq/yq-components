@@ -1,6 +1,6 @@
 {
   "name": "@yqcoder/components",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "private": false,
   "main": "dist/npm.common.js",
   "scripts": {
@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "echarts": "^4.9.0",
+    "echarts-liquidfill": "^2.0.6",
     "register-service-worker": "^1.7.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-seamless-scroll": "^1.1.23"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",
