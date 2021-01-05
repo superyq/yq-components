@@ -21,7 +21,16 @@ Vue.use(yqComponent);
 ## 2.&emsp;组件列表
 
 2.1 &emsp;[加载中](#loading)
+
 2.2 &emsp;[百分比进度条](#percentage)
+
+2.3 &emsp;[遮罩层](#master)
+
+2.4 &emsp;[基础echarts](#echarts)
+
+2.5 &emsp;[上下滚动](#scroll)
+
+2.6 &emsp;[自动滚动](#autoscroll)
 
 ## 3.&emsp;组件demo
 
@@ -86,7 +95,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.6 &emsp;<a id='autoScroll'>自动滚动</a>
+### 3.6 &emsp;<a id='autoscroll'>自动滚动</a>
 
 ```js
 // tables: 滚动的tables列表
