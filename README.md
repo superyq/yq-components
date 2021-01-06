@@ -80,7 +80,7 @@ Vue.use(yqComponent);
 ```js
 // toBottom: 下拉触底函数
 // rem: 是否使用rem单位, true:是, false: 否, 默认为false
-// 注：父级设置宽高和overflow: hidden;，子集盒子宽度需要设置ul { width: calc(100% - 0.5rem) }
+// 注：父级设置宽高和overflow: hidden;，子集盒子宽度需要设置ul { width: calc(100% - 0.5rem) }或者ul { width: calc(100% - 50px) }
 
 <div class='scroll-box'>
   <c-scroll @toBottom='toBottom' rem>
