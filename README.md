@@ -32,6 +32,8 @@ Vue.use(yqComponent);
 
 2.6 &emsp;[自动滚动](#autoscroll)
 
+2.7 &emsp;[echarts柱状图样式1](#barOneEcharts)
+
 ## 3.&emsp;组件demo
 
 ### 3.1 &emsp;<a id='loading'>加载中</a>
@@ -121,5 +123,50 @@ Vue.use(yqComponent);
 
 <div class='autoScroll-box'>
   <auto-scroll :tables='tables' :option="option"></auto-scroll>
+</div>
+```
+
+### 3.7 &emsp;<a id='barOneEcharts'>echarts柱状图样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// title: 标题
+// xDatas: 柱状图数据，数据格式如下demo, value: 数值，cValue: 比年初
+// xNams: 柱状图命名, 数据格式如下demo
+// 注：父级容器确定大小
+
+<div class='bar1-box'>
+  <bar-one-echarts
+    cId="demo"
+    title="我是标题"
+    :xDatas="[
+      { value: 5, cValue: '10%' },
+      { value: 10, cValue: '10%' },
+      { value: 10, cValue: '10%' },
+      { value: 10, cValue: '10%' },
+      { value: 10, cValue: '10%' },
+      { value: 10, cValue: '-10%' },
+    ]"
+    :xName='["建行", "招行", "工行", "农行", "中行", "交行"]'
+  ></bar-one-echarts>
+</div>
+```
+
+### 3.7 &emsp;<a id='barTwoEcharts'>echarts柱状图样式2</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// title: 标题
+// xDatas: 柱状图数据，数据格式如下demo, value: 数值，cValue: 比年初
+// xNams: 柱状图命名, 数据格式如下demo
+// 注：父级容器确定大小
+
+<div class='bar1-box'>
+  <bar-two-echarts
+    cId="demo"
+    title="我是标题"
+    :xDatas="[10,20,30,40,50,60]"
+    :xName='["建行", "招行", "工行", "农行", "中行", "交行"]'
+  ></bar-two-echarts>
 </div>
 ```

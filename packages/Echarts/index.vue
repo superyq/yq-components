@@ -1,5 +1,5 @@
-<template>
-  <div class="c-echarts" :id="cId"></div>
+<template lang="pug">
+  .c-echarts(:id="cId")
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
 
     // 根据屏幕缩放echarts自适应
     this.resizefun = () => {
-      this.$echarts.init(document.getElementById(this.cId)).resize();
+      echarts.init(document.getElementById(this.cId)).resize();
     };
     window.addEventListener("resize", this.resizefun);
   },
@@ -51,7 +51,6 @@ export default {
     myEcharts() {
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById(this.cId));
-
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(this.option);
 
@@ -68,7 +67,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .c-echarts {
   width: 100%;
   height: 100%;

@@ -15,6 +15,7 @@
     "echarts-liquidfill": "^2.0.6",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-router": "^3.3.2",
     "vue-seamless-scroll": "^1.1.23"
   },
   "devDependencies": {
@@ -25,7 +26,10 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-pug": "^1.0.7"
   },
   "eslintConfig": {
     "root": true,

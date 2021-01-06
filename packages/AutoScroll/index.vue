@@ -1,7 +1,6 @@
-<template>
-  <vue-scroll class="auto-scroll" :class-option="options" :data="tables">
-    <slot></slot>
-  </vue-scroll>
+<template lang="pug">
+  vue-scroll.auto-scroll(:class-option="options", :data='tables')
+    slot
 </template>
 
 <script>
@@ -51,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .auto-scroll {
   width: 100%;
   height: 100%;

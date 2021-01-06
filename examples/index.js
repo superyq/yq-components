@@ -4,6 +4,8 @@ import Master from "../packages/Master/index.js";
 import Echarts from "../packages/Echarts/index.js";
 import AutoScroll from "../packages/AutoScroll/index.js";
 import Scroll from "../packages/Scroll/index.js";
+import BarOneEcharts from "../packages/BarOneEcharts/index.js";
+import BarTwoEcharts from "../packages/BarTwoEcharts/index.js";
 
 const components = [
   Loading,
@@ -11,7 +13,9 @@ const components = [
   Master,
   Echarts,
   AutoScroll,
-  Scroll
+  Scroll,
+  BarOneEcharts,
+  BarTwoEcharts
 ]
 
 const install = function (Vue) {
@@ -33,5 +37,7 @@ export default {
   Master,
   Echarts,
   AutoScroll,
-  Scroll
+  Scroll,
+  BarOneEcharts,
+  BarTwoEcharts
 }

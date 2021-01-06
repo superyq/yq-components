@@ -1,0 +1,122 @@
+// 字体颜色渐变
+.c-text-color {
+  background-image: -webkit-linear-gradient(bottom, #9ad9fd, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// 图片自适应盒子
+.c-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-size: 0.12rem;
+}
+
+// 图片基础属性
+.c-basebg {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+// 默认框边框背景色
+.c-box {
+  border: 0.01rem solid rgba(9, 251, 255, 0.5);
+  box-shadow: inset 2px 2px 6px 2px rgba(65, 218, 222, 0.34);
+  background: rgba(8, 88, 238, 0.2);
+}
+
+// 小标题样式
+.c-title {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.35rem;
+  color: #ffffff;
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-right: 0.15rem;
+    width: 0.15rem;
+    height: 0.35rem;
+    background: -webkit-linear-gradient(bottom, #3b73ee, #0eede0);
+  }
+  span {
+    margin-left: 0.1rem;
+    font-size: 0.25rem;
+  }
+}
+
+// 头部样式
+.c-header {
+  display: flex;
+  align-items: flex-end;
+  img {
+    height: 0.85rem;
+    object-fit: cover;
+  }
+  &_title {
+    margin: 0 0.2rem 0 -0.2rem;
+    font-size: 0.4rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  &_time {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 0.25rem;
+      color: #dcecff;
+    }
+    img {
+      width: 2.4rem;
+      height: 0.14rem;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes turn {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes turnB {
+  0% {
+    -webkit-transform: rotate(360deg);
+  }
+  25% {
+    -webkit-transform: rotate(270deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+.turn {
+  transform-origin: center center;
+  animation: turn 2s linear infinite;
+}
+
+.turnB {
+  transform-origin: center center;
+  animation: turnB 2s linear infinite;
+}
