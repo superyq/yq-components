@@ -34,6 +34,36 @@ Vue.use(yqComponent);
 
 2.7 &emsp;[echarts柱状图样式1](#barOneEcharts)
 
+2.8 &emsp;[echarts柱状图样式2](#barTwoEcharts)
+
+2.9 &emsp;[echarts线性图样式1](#lineOneEcharts)
+
+2.10 &emsp;[echarts柱状叠加图样式1](#moreBarEcharts)
+
+2.11 &emsp;[echarts饼状图样式1](#pieOneEcharts)
+
+2.12 &emsp;[echarts雷达图样式1](#radarOneEcharts)
+
+2.13 &emsp;[echarts圆环图样式1](#RingOneEcharts)
+
+2.14 &emsp;[echarts圆环图列表样式1](#RingOneTable)
+
+2.15 &emsp;[echarts圆环图样式2](#RingTwoTable)
+
+2.16 &emsp;[列表样式1](#TableWrapperOne)
+
+2.17 &emsp;[排序样式1](#NumberOne)
+
+2.18 &emsp;[按钮样式1](#BtnOne)
+
+2.19 &emsp;[选择框样式1](#EleOne)
+
+2.20 &emsp;[标题样式1](#HeaderOne)
+
+2.21 &emsp;[排序样式1](#SortOne)
+
+2.22 &emsp;[排序样式2](#SortTwo)
+
 ## 3.&emsp;组件demo
 
 ### 3.1 &emsp;<a id='loading'>加载中</a>
@@ -135,7 +165,7 @@ Vue.use(yqComponent);
 // xNams: 柱状图命名, 数据格式如下demo
 // 注：父级容器确定大小
 
-<div class='bar1-box'>
+<div class='echarts-box'>
   <bar-one-echarts
     cId="demo"
     title="我是标题"
@@ -152,7 +182,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.7 &emsp;<a id='barTwoEcharts'>echarts柱状图样式2</a>
+### 3.8 &emsp;<a id='barTwoEcharts'>echarts柱状图样式2</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -161,7 +191,7 @@ Vue.use(yqComponent);
 // xNams: 柱状图命名, 数据格式如下demo
 // 注：父级容器确定大小
 
-<div class='bar1-box'>
+<div class='echarts-box'>
   <bar-two-echarts
     cId="demo"
     title="我是标题"
@@ -170,3 +200,232 @@ Vue.use(yqComponent);
   ></bar-two-echarts>
 </div>
 ```
+
+### 3.9 &emsp;<a id='lineOneEcharts'>echarts线性图样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// color: 线型图的下部颜色
+// xDatas: 线性图数据，数据格式如下demo, value: 数值，cValue: 比年初
+// xNams: 线性图命名, 数据格式如下demo
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <line-one-echarts
+    cId="demo"
+    :color='["red", "yellow"]'
+    :xDatas="[10,20,30,40,50,60]"
+    :xName='["建行", "招行", "工行", "农行", "中行", "交行"]'
+  ></line-one-echarts>
+</div>
+```
+
+### 3.10 &emsp;<a id='moreBarEcharts'>echarts柱状叠加图样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// xName: 柱状图的下部数据
+// lName: 柱状图叠加命名
+// xDatas: 柱状图命名，
+// datas数据结构如下
+// [{
+//   name: "建行",
+//   type: "bar",
+//   barWidth: "20%",
+//   stack: "总量",
+//   label: {
+//     show: true,
+//     formatter: "{c} %",
+//   },
+//   itemStyle: {
+//     color: "yellow",
+//   },
+//   data: [{ value: 10, cValue: "-10%" }],
+// }]
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <more-bar-echarts :cId='demo' :xName='["四川"]' :lName='["建行"]' :xDatas='datas'></more-bar-echarts>
+</div>
+```
+
+### 3.11 &emsp;<a id='pieOneEcharts'>echarts饼状图样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// title: 饼状图的标题
+// xName: 饼状图X轴
+// xDatas: 饼状图数据，
+// datas数据结构如下
+// [{ value: 10, cValue: "10%" }]
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <pie-one-echarts cId='demo' title='全行合计占比' :xName='["建行", "招行"]' :xDatas='datas'></pie-one-echarts>
+</div>
+```
+
+### 3.12 &emsp;<a id='radarOneEcharts'>echarts雷达图样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// xName: 雷达图X轴
+// xDatas: 雷达图数据，
+// names数据结构如下
+// [{ name: "A", max: 50 }]
+// datas数据结构如下
+// [10]
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <radar-one-echarts cId='demo' :xName='names' :xDatas='datas'></radar-one-echarts>
+</div>
+```
+
+### 3.13 &emsp;<a id='RingOneEcharts'>echarts圆环图样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// colorArr: 圆环图颜色
+// xDatas: 圆环图数据，
+// colors数据结构如下
+// ["#3F06F8", "#5AD8A6", "#F6BD16", "#5b8ff9", "#E86452", "#9E03FF"]
+// datas数据结构如下
+// [{ name: "周一", number: 10 }]
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <ring-one-echarts cId='demo' :colorArr='colors' :xDatas='datas'></ring-one-echarts>
+</div>
+```
+
+### 3.14 &emsp;<a id='RingOneTable'>echarts圆环图列表样式1</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// colorArr: 圆环图颜色
+// xDatas: 圆环图数据，
+// colors数据结构如下
+// ["#3F06F8", "#5AD8A6", "#F6BD16", "#5b8ff9", "#E86452", "#9E03FF"]
+// obj
+// { title: 'a', datas: [{ name: "周一", number: 10 }] }
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <ring-one-table cId='demo' :colorArr='colors' :obj='obj'>
+    <div class='table'>
+      <div class='table-item'></div>
+    </div>      
+  </ring-one-table>
+</div>
+```
+
+### 3.15 &emsp;<a id='RingTwoTable'>echarts圆环图样式2</a>
+
+```js
+// cId: echarts的Id，每个echarts组件id不同
+// colorArr: 圆环图颜色
+// xDatas: 圆环图数据，
+// colors数据结构如下
+// ["#FF9F05", "rgba(255,159,5,0)"]
+// obj
+// { title: 'a', datas: [{ name: "周一", number: 10 }] }
+// 注：父级容器确定大小
+
+<div class='echarts-box'>
+  <ring-two-echarts cId='demo' :color='colors' :obj='obj'>
+  </ring-two-echarts>
+</div>
+```
+
+### 3.16 &emsp;<a id='TableWrapperOne'>列表样式1</a>
+
+```js
+// option: 查看自动滚动组件配置项
+// widthArr: table列表的每列宽度
+// headerArr: table列表的表头标题
+// datasArr: 数据结构如下
+// bottom: 每行距离下方距离
+// datasArr
+// [{ name: 'a', sort: 1, width: '10%', datas: [ 1,2,3 ] }]
+// 注：父级容器确定大小,可以自定义每个样式。
+
+<div class='echarts-box'>
+  <table-wrapper-one :option="option" :widthArr='widthArr' :headerArr='headerArr' :datasArr='datasArr' bottom='0.2'>
+    <div slot='item0' slot-scope='{ data: { item } }'></div>
+  </table-wrapper-one>
+</div>
+```
+
+### 3.17 &emsp;<a id='NumberOne'>排序样式1</a>
+
+```js
+// numnber: 排序数字
+// 注：父级容器确定大小。
+
+<div class='box'>
+  <number-one numnber='1'></number-one>
+</div>
+```
+
+### 3.18 &emsp;<a id='BtnOne'>按钮样式1</a>
+
+```js
+// title: 按钮名字
+// 注：父级容器确定大小。
+
+<div class='box'>
+  <btn-one title='名字'></btn-one>
+</div>
+```
+
+### 3.19 &emsp;<a id='EleOne'>选择框样式1</a>
+
+```js
+// tables: 下拉选择列表
+// table数据结构
+// [{ IDX_SECONDID: "a", IDX_VALUE: 1 }]
+// 注：父级容器确定大小。
+
+<div class='box'>
+  <ele-one :tables='tables'></ele-one>
+</div>
+```
+
+### 3.20 &emsp;<a id='HeaderOne'>标题样式1</a>
+
+```js
+// type: 标题样式, type: 1 或 2
+// title: 标题名称
+// bgImg: 标题背景
+// 注：父级容器确定大小。
+
+<div class='box'>
+  <header-one :type='type' title='title' :bgImg='img'></header-one>
+</div>
+```
+
+### 3.21 &emsp;<a id='SortOne'>排序样式1</a>
+
+```js
+// txt: 排序名
+// sort: 排序数
+// 注：父级容器确定大小。
+
+<div class='box'>
+  <sort-one txt='排名' sort='1'></sort-one>
+</div>
+```
+
+### 3.22 &emsp;<a id='SortTwo'>排序样式2</a>
+
+```js
+// txt: 排序名
+// sort: 排序数
+// 注：父级容器确定大小。
+
+<div class='box'>
+  <sort-two txt='排名' sort='1'></sort-two>
+</div>
+```
+
