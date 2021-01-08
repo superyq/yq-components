@@ -32,37 +32,37 @@ Vue.use(yqComponent);
 
 2.6 &emsp;[自动滚动](#autoscroll)
 
-2.7 &emsp;[echarts柱状图样式1](#barOneEcharts)
+2.7 &emsp;[echarts柱状图样式1](#baroneecharts)
 
-2.8 &emsp;[echarts柱状图样式2](#barTwoEcharts)
+2.8 &emsp;[echarts柱状图样式2](#bartwoecharts)
 
-2.9 &emsp;[echarts线性图样式1](#lineOneEcharts)
+2.9 &emsp;[echarts线性图样式1](#lineoneecharts)
 
-2.10 &emsp;[echarts柱状叠加图样式1](#moreBarEcharts)
+2.10 &emsp;[echarts柱状叠加图样式1](#morebarecharts)
 
-2.11 &emsp;[echarts饼状图样式1](#pieOneEcharts)
+2.11 &emsp;[echarts饼状图样式1](#pieoneecharts)
 
-2.12 &emsp;[echarts雷达图样式1](#radarOneEcharts)
+2.12 &emsp;[echarts雷达图样式1](#radaroneecharts)
 
-2.13 &emsp;[echarts圆环图样式1](#RingOneEcharts)
+2.13 &emsp;[echarts圆环图样式1](#ringoneecharts)
 
-2.14 &emsp;[echarts圆环图列表样式1](#RingOneTable)
+2.14 &emsp;[echarts圆环图列表样式1](#ringonetable)
 
-2.15 &emsp;[echarts圆环图样式2](#RingTwoTable)
+2.15 &emsp;[echarts圆环图样式2](#ringtwotable)
 
-2.16 &emsp;[列表样式1](#TableWrapperOne)
+2.16 &emsp;[列表样式1](#tablewrapperone)
 
-2.17 &emsp;[排序样式1](#NumberOne)
+2.17 &emsp;[排序样式1](#numberone)
 
-2.18 &emsp;[按钮样式1](#BtnOne)
+2.18 &emsp;[按钮样式1](#btnone)
 
-2.19 &emsp;[选择框样式1](#EleOne)
+2.19 &emsp;[选择框样式1](#eleone)
 
-2.20 &emsp;[标题样式1](#HeaderOne)
+2.20 &emsp;[标题样式1](#headerone)
 
-2.21 &emsp;[排序样式1](#SortOne)
+2.21 &emsp;[排序样式1](#sortone)
 
-2.22 &emsp;[排序样式2](#SortTwo)
+2.22 &emsp;[排序样式2](#sorttwo)
 
 ## 3.&emsp;组件demo
 
@@ -156,7 +156,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.7 &emsp;<a id='barOneEcharts'>echarts柱状图样式1</a>
+### 3.7 &emsp;<a id='baroneecharts'>echarts柱状图样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -182,7 +182,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.8 &emsp;<a id='barTwoEcharts'>echarts柱状图样式2</a>
+### 3.8 &emsp;<a id='bartwoecharts'>echarts柱状图样式2</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -201,7 +201,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.9 &emsp;<a id='lineOneEcharts'>echarts线性图样式1</a>
+### 3.9 &emsp;<a id='lineoneecharts'>echarts线性图样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -220,7 +220,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.10 &emsp;<a id='moreBarEcharts'>echarts柱状叠加图样式1</a>
+### 3.10 &emsp;<a id='morebarecharts'>echarts柱状叠加图样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -249,7 +249,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.11 &emsp;<a id='pieOneEcharts'>echarts饼状图样式1</a>
+### 3.11 &emsp;<a id='pieoneecharts'>echarts饼状图样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -265,7 +265,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.12 &emsp;<a id='radarOneEcharts'>echarts雷达图样式1</a>
+### 3.12 &emsp;<a id='radaroneecharts'>echarts雷达图样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -282,7 +282,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.13 &emsp;<a id='RingOneEcharts'>echarts圆环图样式1</a>
+### 3.13 &emsp;<a id='ringoneecharts'>echarts圆环图样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -299,7 +299,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.14 &emsp;<a id='RingOneTable'>echarts圆环图列表样式1</a>
+### 3.14 &emsp;<a id='ringonetable'>echarts圆环图列表样式1</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -320,7 +320,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.15 &emsp;<a id='RingTwoTable'>echarts圆环图样式2</a>
+### 3.15 &emsp;<a id='ringtwotable'>echarts圆环图样式2</a>
 
 ```js
 // cId: echarts的Id，每个echarts组件id不同
@@ -338,7 +338,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.16 &emsp;<a id='TableWrapperOne'>列表样式1</a>
+### 3.16 &emsp;<a id='tablewrapperone'>列表样式1</a>
 
 ```js
 // option: 查看自动滚动组件配置项
@@ -357,7 +357,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.17 &emsp;<a id='NumberOne'>排序样式1</a>
+### 3.17 &emsp;<a id='numberone'>排序样式1</a>
 
 ```js
 // numnber: 排序数字
@@ -368,7 +368,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.18 &emsp;<a id='BtnOne'>按钮样式1</a>
+### 3.18 &emsp;<a id='btnone'>按钮样式1</a>
 
 ```js
 // title: 按钮名字
@@ -379,7 +379,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.19 &emsp;<a id='EleOne'>选择框样式1</a>
+### 3.19 &emsp;<a id='eleone'>选择框样式1</a>
 
 ```js
 // tables: 下拉选择列表
@@ -392,7 +392,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.20 &emsp;<a id='HeaderOne'>标题样式1</a>
+### 3.20 &emsp;<a id='headerone'>标题样式1</a>
 
 ```js
 // type: 标题样式, type: 1 或 2
@@ -405,7 +405,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.21 &emsp;<a id='SortOne'>排序样式1</a>
+### 3.21 &emsp;<a id='sortone'>排序样式1</a>
 
 ```js
 // txt: 排序名
@@ -417,7 +417,7 @@ Vue.use(yqComponent);
 </div>
 ```
 
-### 3.22 &emsp;<a id='SortTwo'>排序样式2</a>
+### 3.22 &emsp;<a id='sorttwo'>排序样式2</a>
 
 ```js
 // txt: 排序名
