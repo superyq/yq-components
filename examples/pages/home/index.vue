@@ -1,7 +1,7 @@
 <template lang="pug">
   .page-home
     .echarts-box
-      sort-two(sort='4')
+      c-loading(:loading='true')
 </template>
 <script>
 import a from "../../assets/number-bg1.png";

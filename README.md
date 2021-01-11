@@ -71,8 +71,9 @@ Vue.use(yqComponent);
 ```js
 // loading: 判断是否显示加载中, true:显示, false:隐藏, 默认为false
 // rem: 是否使用rem单位, true:是, false: 否, 默认为false
+// 注意：大小由外部盒子决定，外部盒子需css中position: relative
 
-<loading :loading='true' rem></loading>
+<c-loading :loading='true' rem></c-loading>
 ```
 
 ### 3.2 &emsp;<a id='percentage'>百分比进度条</a>
@@ -83,7 +84,7 @@ Vue.use(yqComponent);
 // haveBg: 是否显示黑色背景, true:是, false: 否, 默认为true
 // rem: 是否使用rem单位, true:是, false: 否, 默认为false
 
-<percentage width='70%' :background='["#002adb", "#04f7fb"]' :haveBg='false' rem></percentage>
+<c-percentage width='70%' :background='["#002adb", "#04f7fb"]' :haveBg='false' rem></c-percentage>
 ```
 
 ### 3.3 &emsp;<a id='master'>遮罩层</a>

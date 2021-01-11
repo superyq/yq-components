@@ -26,7 +26,7 @@ export default {
 
 <style>
 .c-loading {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
