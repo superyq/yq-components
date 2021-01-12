@@ -71,7 +71,7 @@ Vue.use(yqComponent);
 ```js
 // loading: 判断是否显示加载中, true:显示, false:隐藏, 默认为false
 // rem: 是否使用rem单位, true:是, false: 否, 默认为false
-// 注意：大小由外部盒子决定，外部盒子需css中position: relative
+// 注意：大小由外部盒子决定，外部盒子需设置position: relative
 
 <c-loading :loading='true' rem></c-loading>
 ```
