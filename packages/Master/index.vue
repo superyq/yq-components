@@ -30,6 +30,7 @@ export default {
   justify-content: center;
   background: rgba(0, 0, 0, 0.6);
   color: rgba(255, 255, 255, 0.8);
+  z-index: 999;
 }
 .c-master--px {
   font-size: 24px;
