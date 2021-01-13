@@ -21,7 +21,7 @@ export default {
         return ["1月", "2月", "3月", "4月", "5月", "6月", "7月"];
       },
     },
-    xData: {
+    xDatas: {
       type: Array,
       default() {
         return [820, 932, 901, 934, 1290, 1330, 1320];
@@ -29,6 +29,9 @@ export default {
     },
   },
   computed: {
+    fontScale() {
+      return window.fontScale || 1;
+    },
     option() {
       return {
         grid: {
@@ -42,7 +45,7 @@ export default {
           data: this.xName,
           axisLabel: {
             color: "rgba(255,255,255,0.7)",
-            fontSize: 16 * window.fontScale,
+            fontSize: 16 * this.fontScale,
           },
           axisLine: {
             lineStyle: {
@@ -57,7 +60,7 @@ export default {
           type: "value",
           axisLabel: {
             color: "rgba(255,255,255,0.7)",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
           },
           axisLine: {
             lineStyle: {
@@ -76,18 +79,18 @@ export default {
         },
         series: [
           {
-            data: this.xData,
+            data: this.xDatas,
             type: "line",
             lineStyle: {
               color: this.color[0],
             },
             symbol: "circle",
-            symbolSize: 12 * window.fontScale,
+            symbolSize: 12 * this.fontScale,
             itemStyle: {
               // color: '#FF9F05',
               color: this.color[0],
               borderColor: "#fff",
-              borderWidth: 2 * window.fontScale,
+              borderWidth: 2 * this.fontScale,
             },
             areaStyle: {
               color: {

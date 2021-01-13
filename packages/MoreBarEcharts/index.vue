@@ -1,5 +1,5 @@
 <template lang="pug">
-  c-echarts(:cId='cId', :option='option')
+  c-echarts(:cId='cId', :option='option', :class='{ "more-bar_px": !rem }')
 </template>
 
 <script>
@@ -9,6 +9,10 @@ import down from "@/assets/down.png";
 export default {
   name: "more-bar-echarts",
   props: {
+    rem: {
+      type: Boolean,
+      default: false,
+    },
     cId: {
       type: String,
       require: true,
@@ -42,12 +46,15 @@ export default {
               color: "yellow",
             },
             data: [{ value: 10, cValue: "-10%" }],
-          }
+          },
         ];
       },
     },
   },
   computed: {
+    fontScale() {
+      return window.fontScale || 1;
+    },
     option() {
       return {
         grid: {
@@ -90,11 +97,11 @@ export default {
           top: "22%",
           textStyle: {
             color: "#fff",
-            padding: [3 * window.fontScale, 0, 0, 8 * window.fontScale],
+            padding: [3 * this.fontScale, 0, 0, 8 * this.fontScale],
           },
-          itemWidth: 10 * window.fontScale,
-          itemHeight: 10 * window.fontScale,
-          itemGap: 22 * window.fontScale,
+          itemWidth: 10 * this.fontScale,
+          itemHeight: 10 * this.fontScale,
+          itemGap: 22 * this.fontScale,
           icon: "circle",
           data: this.lName,
         },
@@ -104,7 +111,7 @@ export default {
           axisLine: {
             lineStyle: {
               color: "#08BBE1",
-              width: 1 * window.fontScale,
+              width: 1 * this.fontScale,
             },
           },
           axisTick: {
@@ -112,7 +119,7 @@ export default {
           },
           axisLabel: {
             color: "#FFFFFF",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
           },
         },
         yAxis: {
@@ -126,7 +133,7 @@ export default {
           axisLabel: {
             color: "rgba(255,255,255,0.7)",
             formatter: "{value}%",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
           },
           splitLine: {
             lineStyle: {
@@ -181,6 +188,38 @@ export default {
         width: 0.1rem;
         height: 0.09rem;
         object-fit: cover;
+      }
+    }
+  }
+}
+.more-bar_px {
+  .more-bar-echarts {
+    width: 230px;
+    height: 180px;
+    padding: 10px 0 10px 10px;
+    h2 {
+      margin-bottom: 5px;
+    }
+    .item {
+      margin-bottom: 2px;
+      &_icon {
+        width: 8px;
+        height: 8px;
+        margin-right: 10px;
+      }
+      &_name {
+        margin-right: 36px;
+      }
+      &_number {
+        width: 60px;
+      }
+      &_upordown {
+        margin-left: 8px;
+        img {
+          margin-left: 5px;
+          width: 10px;
+          height: 9px;
+        }
       }
     }
   }

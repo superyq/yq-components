@@ -13,7 +13,7 @@ export default {
     },
     xDatas: {
       type: Array,
-      require: true
+      require: true,
     },
     colorArr: {
       type: Array,
@@ -23,18 +23,23 @@ export default {
     },
   },
   mounted() {
-    this.dealArr()
+    this.dealArr();
   },
   watch: {
     xDatas() {
       this.dealArr();
-    }
+    },
+  },
+  computed: {
+    fontScale() {
+      return window.fontScale || 1;
+    },
   },
   data() {
     return {
       baseOption: {
         tooltip: {
-          formatter: '{b}: {c}%'
+          formatter: "{b}: {c}%",
         },
         radiusAxis: {
           type: "category",
@@ -50,9 +55,9 @@ export default {
             interval: 0,
             color: "#fff",
             // 字与柱间距
-            margin: 16 * window.fontScale,
+            margin: 16 * this.fontScale,
             // 字体大小
-            fontSize: 12 * window.fontScale,
+            fontSize: 12 * this.fontScale,
           },
         },
         angleAxis: {
@@ -101,8 +106,9 @@ export default {
           },
         });
       });
-      
-      this.baseOption.angleAxis.max = (sortArr(this.xDatas, -1, "number")[0].number * 4) / 3;
+
+      this.baseOption.angleAxis.max =
+        (sortArr(this.xDatas, -1, "number")[0].number * 4) / 3;
       this.baseOption.radiusAxis.data = nameArr;
       this.baseOption.series[0].data = seriesData.reverse();
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-  .bar-one-echarts
+  .bar-one-echarts(:class="{ 'bar-one-echarts_px': !rem }")
     .bar-one-echarts_title {{ title }}
     .bar-one-echarts_echarts
       c-echarts(:cId='cId', :option='option')
@@ -12,6 +12,10 @@ import down from "../../examples/assets/down.png";
 export default {
   name: "bar-one-echarts",
   props: {
+    rem: {
+      type: Boolean,
+      default: false
+    },
     title: {
       type: String,
       default: "全行合计占比",
@@ -41,6 +45,9 @@ export default {
     },
   },
   computed: {
+    fontScale() {
+      return window.fontScale || 1;
+    },
     option() {
       return {
         grid: {
@@ -54,7 +61,7 @@ export default {
           axisLine: {
             lineStyle: {
               color: "#08BBE1",
-              width: 1 * window.fontScale,
+              width: 1 * this.fontScale,
             },
           },
           axisTick: {
@@ -62,7 +69,7 @@ export default {
           },
           axisLabel: {
             color: "#FFFFFF",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
           },
         },
         yAxis: {
@@ -75,7 +82,7 @@ export default {
           axisLabel: {
             color: "#ffffff",
             formatter: "{value}%",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
           },
           splitLine: {
             lineStyle: {
@@ -127,28 +134,28 @@ export default {
               rich: {
                 a: {
                   color: "#ffffff",
-                  fontSize: 14 * window.fontScale,
+                  fontSize: 14 * this.fontScale,
                   align: "center",
                 },
                 rate: {
                   color: "#F9AE25",
-                  fontSize: 10 * window.fontScale,
+                  fontSize: 10 * this.fontScale,
                   align: "center",
                 },
                 rateDown: {
                   color: "#02a69c",
-                  fontSize: 10 * window.fontScale,
+                  fontSize: 10 * this.fontScale,
                   align: "center",
                 },
                 up: {
-                  height: 15 * window.fontScale,
+                  height: 15 * this.fontScale,
                   align: "left",
                   backgroundColor: {
                     image: up,
                   },
                 },
                 down: {
-                  height: 15 * window.fontScale,
+                  height: 15 * this.fontScale,
                   align: "left",
                   backgroundColor: {
                     image: down,
@@ -170,6 +177,8 @@ export default {
   width: 100%;
   height: 100%;
   &_title {
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0.1rem;
@@ -187,6 +196,17 @@ export default {
   &_echarts {
     width: 100%;
     height: 100%;
+  }
+}
+.bar-one-echarts_px {
+  .bar-one-echarts_title {
+    font-size: 20px;
+    left: 10px;
+    &::before {
+      width: 6px;
+      height: 6px;
+      margin-right: 6px;
+    }
   }
 }
 </style>

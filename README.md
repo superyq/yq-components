@@ -70,7 +70,7 @@ Vue.use(yqComponent);
 
 ```js
 // loading: 判断是否显示加载中, true:显示, false:隐藏, 默认为false
-// rem: 是否使用rem单位, true:是, false: 否, 默认为false
+// rem: 加载圈是否使用rem单位, true:是, false: 否, 默认为false
 // 注意：大小由外部盒子决定，外部盒子需设置position: relative
 
 <c-loading :loading='true' rem></c-loading>
@@ -82,7 +82,7 @@ Vue.use(yqComponent);
 // width: 进度条百分比, 0%-100%, 默认为50%
 // background: 进度条颜色左到右['', ''], 默认为["#002adb", "#04f7fb"]
 // haveBg: 是否显示黑色背景, true:是, false: 否, 默认为true
-// rem: 是否使用rem单位, true:是, false: 否, 默认为false
+// rem: 圆角是否使用rem单位, true:是, false: 否, 默认为false
 
 <c-percentage width='70%' :background='["#002adb", "#04f7fb"]' :haveBg='false' rem></c-percentage>
 ```
@@ -91,7 +91,7 @@ Vue.use(yqComponent);
 
 ```js
 // text: 遮罩层的文字, 默认为"遮罩"
-// rem: 是否使用rem单位, true:是, false: 否, 默认为false
+// rem: 文字是否使用rem单位, true:是, false: 否, 默认为false
 // 注：父级容器需要写入: position: relative
 
 <c-master text='遮罩' rem></c-master>
@@ -113,7 +113,7 @@ Vue.use(yqComponent);
 ```js
 // toBottom: 下拉触底函数
 // rem: 是否使用rem单位, true:是, false: 否, 默认为false
-// 注：父级设置宽高和overflow: hidden;，子集盒子宽度需要设置ul { width: calc(100% - 0.5rem) }或者ul { width: calc(100% - 50px) }
+// 注：父级容器需设置宽高和overflow: hidden;子集盒子宽度需要设置 width: calc(100% - 0.5rem)或者 width: calc(100% - 50px)
 
 <div class='scroll-box'>
   <c-scroll @toBottom='toBottom' rem>
@@ -164,6 +164,7 @@ Vue.use(yqComponent);
 // title: 标题
 // xDatas: 柱状图数据，数据格式如下demo, value: 数值，cValue: 比年初
 // xNams: 柱状图命名, 数据格式如下demo
+// rem: 标题大小单位是否用rem，true:是, false: 否, 默认为false
 // 注：父级容器确定大小
 
 <div class='echarts-box'>
@@ -188,15 +189,23 @@ Vue.use(yqComponent);
 ```js
 // cId: echarts的Id，每个echarts组件id不同
 // title: 标题
-// xDatas: 柱状图数据，数据格式如下demo, value: 数值，cValue: 比年初
-// xNams: 柱状图命名, 数据格式如下demo
+// xDatas: 柱状图数据
+// xNams: 柱状图命名
+// rem: 判断是否使用rem单位，false：否，true：是，默认false
 // 注：父级容器确定大小
 
 <div class='echarts-box'>
   <bar-two-echarts
     cId="demo"
+    :rem='rem',
     title="我是标题"
-    :xDatas="[10,20,30,40,50,60]"
+    :xDatas="[{
+          value: 60,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "up" },
+          ],
+        }]"
     :xName='["建行", "招行", "工行", "农行", "中行", "交行"]'
   ></bar-two-echarts>
 </div>
@@ -207,8 +216,8 @@ Vue.use(yqComponent);
 ```js
 // cId: echarts的Id，每个echarts组件id不同
 // color: 线型图的下部颜色
-// xDatas: 线性图数据，数据格式如下demo, value: 数值，cValue: 比年初
-// xNams: 线性图命名, 数据格式如下demo
+// xDatas: 线性图数据
+// xNams: 线性图命名
 // 注：父级容器确定大小
 
 <div class='echarts-box'>
@@ -329,12 +338,10 @@ Vue.use(yqComponent);
 // xDatas: 圆环图数据，
 // colors数据结构如下
 // ["#FF9F05", "rgba(255,159,5,0)"]
-// obj
-// { title: 'a', datas: [{ name: "周一", number: 10 }] }
 // 注：父级容器确定大小
 
 <div class='echarts-box'>
-  <ring-two-echarts cId='demo' :color='colors' :obj='obj'>
+  <ring-two-echarts cId='demo' :color='colors'>
   </ring-two-echarts>
 </div>
 ```

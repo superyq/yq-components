@@ -1,5 +1,5 @@
 <template lang="pug">
-  .bar-two-echarts
+  .bar-two-echarts(:class='{ "bar-two-echarts_px": !rem }')
     .bar-two-echarts_title {{ title }}
     .bar-two-echarts_echarts
       c-echarts(:cId='cId', :option='option')
@@ -11,6 +11,10 @@ import up from "@/assets/up.png";
 export default {
   name: "bar-two-echarts",
   props: {
+    rem: {
+      type: Boolean,
+      deafult: false
+    },
     cId: {
       type: String,
       require: true,
@@ -24,7 +28,7 @@ export default {
         return ["全行", "重点区域", "六行", "京津翼", "长三角", "粤港澳"];
       },
     },
-    xData: {
+    xDatas: {
       type: Array,
       default() {
         return [10, 20, 30, 40, 50, 60];
@@ -32,6 +36,9 @@ export default {
     },
   },
   computed: {
+    fontScale() {
+      return this.fontScale || 1;
+    },
     option() {
       return {
         grid: {
@@ -69,7 +76,7 @@ export default {
           axisLine: {
             lineStyle: {
               color: "#08BBE1",
-              width: 1 * window.fontScale,
+              width: 1 * this.fontScale,
             },
           },
           axisTick: {
@@ -77,7 +84,7 @@ export default {
           },
           axisLabel: {
             color: "#FFFFFF",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
             interval: 0,
           },
         },
@@ -92,7 +99,7 @@ export default {
             show: false,
             color: "#ffffff",
             formatter: "{value}%",
-            fontSize: 14 * window.fontScale,
+            fontSize: 14 * this.fontScale,
           },
           splitLine: {
             lineStyle: {
@@ -103,7 +110,7 @@ export default {
         series: [
           {
             type: "bar",
-            data: this.xData,
+            data: this.xDatas,
             barWidth: "30%",
             itemStyle: {
               color: {
@@ -134,7 +141,7 @@ export default {
               rich: {
                 a: {
                   color: "#ffffff",
-                  fontSize: 16 * window.fontScale,
+                  fontSize: 16 * this.fontScale,
                   align: "center",
                 },
               },
@@ -190,6 +197,32 @@ export default {
         width: 0.13rem;
         height: 0.18rem;
         object-fit: cover;
+      }
+    }
+  }
+}
+.bar-two-echarts_px {
+  .bar-two-echarts_title {
+    top: 15px;
+    left: 35px;
+    font-size: 12px;
+    &::before {
+      width: 6px;
+      height: 6px;
+      margin-right: 6px;
+    }
+  }
+  .bar-two-echarts_box {
+    padding: 10px 15px 10px 20px;
+    font-size: 14px;
+    &-item {
+      margin-bottom: 5px;
+      .box-item_number {
+        font-size: 16px;
+      }
+      img {
+        width: 13px;
+        height: 18px;
       }
     }
   }

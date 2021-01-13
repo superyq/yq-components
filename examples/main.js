@@ -9,7 +9,7 @@ import './scss/index.scss'
 import router from '@/router'
 
 // 自适应js
-import "./utils/rem.js";
+// import "./utils/rem.js";
 
 import myComponents from "./index.js";
 Vue.use(myComponents);

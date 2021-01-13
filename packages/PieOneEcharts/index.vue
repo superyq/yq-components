@@ -1,5 +1,5 @@
 <template lang="pug">
-  .pie-one-echarts
+  .pie-one-echarts(:class='{ "pie-one-echarts_px": !rem }')
     .pie-one-echarts_title {{ title }}
     .pie-one-echarts_content
       .pie-one-echarts_content-echarts
@@ -24,6 +24,10 @@ import down from "@/assets/down.png";
 export default {
   name: "pie-one-echarts",
   props: {
+    rem: {
+      type: Boolean,
+      default: false,
+    },
     cId: {
       type: String,
     },
@@ -44,19 +48,19 @@ export default {
       },
     },
   },
-  watch: {
-    xDatas() {
+  computed: {
+    tableData() {
+      let arr = [];
       this.xDatas.map((item, index) => {
         // 列表数据
-        this.tableData.push({
+        arr.push({
           name: this.xName[index],
           number: item.value,
           compareNumber: item.cValue,
         });
       });
+      return arr;
     },
-  },
-  computed: {
     option() {
       return {
         series: [
@@ -85,7 +89,6 @@ export default {
       up,
       down,
       colorArr: ["#E86452", "#F6BD16", "#5B8FF9", "#5AD8A6", "#3F06F8", "#9E03FF"],
-      tableData: [],
     };
   },
 };
@@ -151,6 +154,48 @@ export default {
               height: 100%;
               object-fit: cover;
             }
+          }
+        }
+      }
+    }
+  }
+}
+.pie-one-echarts_px {
+  padding-top: 20px;
+  .pie-one-echarts_title {
+    font-size: 20px;
+    &::before {
+      width: 6px;
+      height: 6px;
+      margin-right: 6px;
+    }
+  }
+  .pie-one-echarts_content {
+    &-echarts {
+      height: 180px;
+      width: 180px;
+    }
+    &-table {
+      margin-left: 10px;
+      .table-item {
+        margin-top: 8px;
+        font-size: 12px;
+        &_icon {
+          width: 10px;
+          height: 10px;
+        }
+        &_name {
+          margin: 0 10px;
+        }
+        &_number {
+          width: 40px;
+          margin-right: 10px;
+        }
+        &_compare {
+          &-img {
+            top: -5px;
+            right: -10px;
+            height: 10px;
           }
         }
       }

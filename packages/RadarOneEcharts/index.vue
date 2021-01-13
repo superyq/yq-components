@@ -36,17 +36,20 @@ export default {
     },
   },
   computed: {
+    fontScale() {
+      return window.fontScale || 1;
+    },
     option() {
       return {
         tooltip: {},
         radar: {
-          nameGap: 8 * window.fontScale,
+          nameGap: 8 * this.fontScale,
           splitNumber: 5,
           name: {
             show: true,
             textStyle: {
               color: "rgba(255,255,255,0.8)",
-              fontSize: 12 * window.fontScale,
+              fontSize: 12 * this.fontScale,
             },
           },
           axisLine: {
@@ -73,7 +76,7 @@ export default {
           {
             type: "radar",
             symbol: "circle",
-            symbolSize: 6 * window.fontScale,
+            symbolSize: 6 * this.fontScale,
             itemStyle: {
               color: "#CB2DFD",
             },

@@ -1,5 +1,5 @@
 <template lang="pug">
-  .ring-table
+  .ring-table(:class='{ "ring-table_px": !rem }')
     .ring-table_title(v-if='obj.title') {{ obj.title }}
     .ring-table_content
       .ring-table_content-echarts
@@ -17,6 +17,10 @@
 export default {
   name: "ring-one-table",
   props: {
+    rem: {
+      type: Boolean,
+      default: false
+    },
     cId: {
       type: String,
     },
@@ -67,6 +71,32 @@ export default {
             height: 0.08rem;
             margin-right: 0.1rem;
             border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+.ring-table_px {
+  padding: 28px 40px 40px;
+  font-size: 14px;
+  .ring-table_title {
+    margin-bottom: 10px;
+  }
+  .ring-table_content {
+    height: calc(100% - 24px);
+    &-echarts {
+      width: 200px;
+      margin: 0 40px 0 24px;
+    }
+    &-table {
+      &-menu {
+        .menu-item {
+          margin-bottom: 10px;
+          &_icon {
+            width: 8px;
+            height: 8px;
+            margin-right: 10px;
           }
         }
       }
