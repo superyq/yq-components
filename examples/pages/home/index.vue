@@ -1,8 +1,12 @@
 <template lang="pug">
   .page-home
     .echarts-box
-      ring-two-echarts(
-        cId="demo"
+      bar-two-echarts(
+        cId="demo",
+        :rem='rem',
+        :title="title",
+        :xDatas="xDatas"
+        :xName='xName'
       )
 </template>
 <script>
@@ -10,18 +14,53 @@ export default {
   name: "page-home",
   data() {
     return {
-      color: ["red", "rgba(255,159,5,0)"],
-      obj: {
-        title: "a",
-        datas: [
-          { name: "周一", number: 10 },
-          { name: "周一", number: 10 },
-          { name: "周一", number: 10 },
-          { name: "周一", number: 10 },
-          { name: "周一", number: 10 },
-          { name: "周一", number: 10 },
-        ],
-      },
+      rem: false,
+      xDatas: [
+        {
+          value: 20,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "人" },
+          ],
+        },
+        {
+          value: 30,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "人" },
+          ],
+        },
+        {
+          value: 40,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "up" },
+          ],
+        },
+        {
+          value: 40,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "up" },
+          ],
+        },
+        {
+          value: 40,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "up" },
+          ],
+        },
+        {
+          value: 60,
+          datas: [
+            { name: "纯新增", value: "41", unit: "人" },
+            { name: "存量流失", value: "40", unit: "up" },
+          ],
+        },
+      ],
+      xName: ["全行", "重点区域", "六行", "京津翼", "长三角", "粤港澳"],
+      title: "标题",
     };
   },
   methods: {},

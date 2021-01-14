@@ -29,15 +29,12 @@ export default {
       },
     },
     xDatas: {
-      type: Array,
-      default() {
-        return [10, 20, 30, 40, 50, 60];
-      },
+      type: Array
     },
   },
   computed: {
     fontScale() {
-      return this.fontScale || 1;
+      return window.fontScale || 1;
     },
     option() {
       return {
