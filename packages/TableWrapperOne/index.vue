@@ -1,11 +1,11 @@
 <template lang="pug">
   .table-wrapper(:class='{ "table-wrapper_px": !rem }')
     .table-wrapper_header
-      .header_item(v-for="(item, index) in headerArr", :style='{ "width": `${widthArr[index]}rem` }') {{ item }}
+      .header_item(v-for="(item, index) in headerArr", :style='{ "width": rem ? `${widthArr[index]}rem` : `${widthArr[index] * 100}px` }') {{ item }}
     .table-wrapper_content(v-if='datasArr.length')
       auto-scroll(:tables='datasArr', :option="option")
         .table-item(v-for='(item, index) in datasArr', :key='index', :class='`item${index}`', :style='`margin-bottom: ${bottom}rem`')
-          .table-item_colmu1(:style='{"width": `${widthArr[0]}rem`}')
+          .table-item_colmu1(:style='{"width": rem ? `${widthArr[0]}rem` : `${widthArr[0] * 100}px`}')
             slot(name='item0', :data='{item, index}')
               .table-item_colmu1-sort {{ item.sort }}
               .table-item_colmu1-name {{ item.name }}
@@ -15,7 +15,7 @@
           .table-item_colmun(
             v-for='(_item, _index) in item.datas', 
             :key='_index', 
-            :style='{"width": `${widthArr[_index+1]}rem`, "color": `${_index == 0 && fontColor[index]}`}'
+            :style='{"width": rem ? `${widthArr[index+1]}rem` : `${widthArr[index+1] * 100}px`, "color": `${_index == 0 && fontColor[index]}`}'
           ) 
             slot(:name='`item${_index+1}`', :data='{item: _item, index: (_index + 1)}') {{ _item }}
 
@@ -78,11 +78,13 @@ export default {
   &_header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 0.4rem;
     margin-bottom: 0.4rem;
     background: rgba(9, 97, 252, 0.92);
     padding: 0 0.2rem;
+    .header_item {
+      flex: none;
+    }
   }
   &_content {
     padding: 0 0.2rem;
@@ -92,10 +94,12 @@ export default {
       &_colmun {
         display: flex;
         align-items: center;
+        flex: none;
       }
       &_colmu1 {
         display: flex;
         align-items: center;
+        flex: none;
         &-sort {
           width: 0.2rem;
           height: 0.2rem;

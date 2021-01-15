@@ -1,12 +1,13 @@
 <template lang="pug">
   .page-home
     .echarts-box
-      bar-two-echarts(
-        cId="demo",
+      table-wrapper-one(
         :rem='rem',
-        :title="title",
-        :xDatas="xDatas"
-        :xName='xName'
+        :widthArr='widthArr', 
+        :headerArr='headerArr', 
+        :datasArr='datasArr', 
+        :bottom='bottom', 
+        :option='option'
       )
 </template>
 <script>
@@ -15,52 +16,11 @@ export default {
   data() {
     return {
       rem: false,
-      xDatas: [
-        {
-          value: 20,
-          datas: [
-            { name: "纯新增", value: "41", unit: "人" },
-            { name: "存量流失", value: "40", unit: "人" },
-          ],
-        },
-        {
-          value: 30,
-          datas: [
-            { name: "纯新增", value: "41", unit: "人" },
-            { name: "存量流失", value: "40", unit: "人" },
-          ],
-        },
-        {
-          value: 40,
-          datas: [
-            { name: "纯新增", value: "41", unit: "人" },
-            { name: "存量流失", value: "40", unit: "up" },
-          ],
-        },
-        {
-          value: 40,
-          datas: [
-            { name: "纯新增", value: "41", unit: "人" },
-            { name: "存量流失", value: "40", unit: "up" },
-          ],
-        },
-        {
-          value: 40,
-          datas: [
-            { name: "纯新增", value: "41", unit: "人" },
-            { name: "存量流失", value: "40", unit: "up" },
-          ],
-        },
-        {
-          value: 60,
-          datas: [
-            { name: "纯新增", value: "41", unit: "人" },
-            { name: "存量流失", value: "40", unit: "up" },
-          ],
-        },
-      ],
-      xName: ["全行", "重点区域", "六行", "京津翼", "长三角", "粤港澳"],
-      title: "标题",
+      widthArr: [2.8, 1.64, 1.5, 1.5, 1],
+      headerArr: ["私行占比排名", "私行占比", "系统占比", "期末（私行）", "期末（零售）"],
+      datasArr: [{ name: "yq", sort: 5, width: "10%", datas: [10, 20, 30, 100] }],
+      option: {},
+      bottom: "0.2",
     };
   },
   methods: {},
