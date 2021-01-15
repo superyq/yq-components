@@ -1,5 +1,8 @@
 <template lang="pug">
-  .private-number(:style='`background-image: url(${imgs[number] || img3})`') {{ number }}
+  .private-number(
+    :class='{ "private-number_px": !rem }'
+    :style='`background-image: url(${imgs[number] || img3})`'
+  ) {{ number }}
 </template>
 
 <script>
@@ -10,6 +13,10 @@ import img3 from "@/assets/number-bg3.png";
 export default {
   name: "number-one",
   props: {
+    rem: {
+      type: Boolean,
+      default: false
+    },
     number: {
       type: [Number, String],
     },
@@ -33,5 +40,8 @@ export default {
   font-size: 0.12rem;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+.private-number_px {
+  font-size: 12px;
 }
 </style>

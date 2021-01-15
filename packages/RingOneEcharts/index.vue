@@ -29,6 +29,9 @@ export default {
     xDatas() {
       this.dealArr();
     },
+    colorArr() {
+      this.dealArr();
+    }
   },
   computed: {
     fontScale() {

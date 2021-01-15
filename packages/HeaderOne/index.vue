@@ -1,23 +1,27 @@
 <template lang="pug">
-  .pb-header
-    .pb-header_type1.c-basebg(v-if='type === 1', :style='`background-image: url(${bgImg})`')
+  .pb-header(:class='{ "ph-header_px": !rem }')
+    .pb-header_type1.c-basebg(v-if='type == 1', :style='`background-image: url(${bgImg})`')
       .pb-header_title(:style='cStyle') {{ title }}
-    .pb-header_type2(v-if='type === 2')
+    .pb-header_type2(v-if='type == 2')
       .pb-header_img
         img(:src="bgImg", alt="alt")
-      .pb-header_title {{ title }}
-    .pb-header_tyep3(v-if='type === 3')
+      .pb-header_title(:style='cStyle') {{ title }}
+    .pb-header_tyep3(v-if='type == 3')
       .pb-header_img
         img(src="", alt="alt")
-      .pb-header_title {{ title }}
+      .pb-header_title(:style='cStyle') {{ title }}
 </template>
 
 <script>
 export default {
   name: "header-one",
   props: {
+    rem: {
+      type: Boolean,
+      default: false
+    },
     type: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
     title: {
@@ -60,6 +64,19 @@ export default {
         height: 100%;
         object-fit: cover;
       }
+    }
+
+  }
+}
+.ph-header_px {
+  .pb-header_type1 {
+    padding-left: 70px;
+  }
+  .pb-header_type2 {
+    font-size: 22px;
+    .pb-header_img {
+      margin-right: 10px;
+      height: 50px;
     }
 
   }

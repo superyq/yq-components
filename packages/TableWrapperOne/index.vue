@@ -1,5 +1,5 @@
 <template lang="pug">
-  .table-wrapper
+  .table-wrapper(:class='{ "table-wrapper_px": !rem }')
     .table-wrapper_header
       .header_item(v-for="(item, index) in headerArr", :style='{ "width": `${widthArr[index]}rem` }') {{ item }}
     .table-wrapper_content(v-if='datasArr.length')
@@ -26,6 +26,10 @@
 export default {
   name: "table-wrapper-one",
   props: {
+    rem: {
+      type: Boolean,
+      default: false
+    },
     option: {
       type: Object,
       default() {
@@ -118,6 +122,48 @@ export default {
       .table-item_colmu1-sort {
         background: #ff6005;
         border: 0.02rem solid #ffd105;
+      }
+    }
+    .item1,
+    .item2 {
+      .table-item_colmu1-sort {
+        background: #ed08dc;
+        border: 2px solid #2405ff;
+      }
+    }
+  }
+}
+.table-wrapper_px {
+  font-size: 16px;
+  .table-wrapper_header {
+    height: 40px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+  .table-wrapper_content {
+    padding: 0 20px;
+    height: 488px;
+    .table-item {
+      &_colmu1 {
+        &-sort {
+          width: 20px;
+          height: 20px;
+          font-size: 14px;
+        }
+        &-name {
+          width: 50px;
+          margin: 0 15px;
+          height: 16px;
+        }
+        &-percent {
+          width: 140px;
+          height: 5px;
+        }
+      }
+    }
+    .item0 {
+      .table-item_colmu1-sort {
+        border: 2px solid #ffd105;
       }
     }
     .item1,
