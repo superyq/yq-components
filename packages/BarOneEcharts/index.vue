@@ -14,7 +14,7 @@ export default {
   props: {
     rem: {
       type: Boolean,
-      default: false
+      default: true
     },
     title: {
       type: String,

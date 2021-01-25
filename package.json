@@ -1,6 +1,6 @@
 {
   "name": "@yqcoder/components",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "private": false,
   "main": "dist/npm.common.js",
   "scripts": {

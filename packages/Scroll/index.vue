@@ -9,7 +9,7 @@ export default {
   props: {
     rem: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   name: "c-scroll",

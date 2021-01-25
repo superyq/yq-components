@@ -27,7 +27,7 @@ export default {
     },
     rem: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   computed: {

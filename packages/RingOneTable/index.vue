@@ -19,7 +19,7 @@ export default {
   props: {
     rem: {
       type: Boolean,
-      default: false
+      default: true
     },
     cId: {
       type: String,

@@ -15,7 +15,7 @@ export default {
   props: {
     rem: {
       type: Boolean,
-      default: false
+      default: true
     },
     number: {
       type: [Number, String],
