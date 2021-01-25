@@ -23,7 +23,7 @@ export default {
     },
   },
   mounted() {
-    this.dealArr();
+    this.xDatas.length && this.dealArr();
   },
   watch: {
     xDatas() {

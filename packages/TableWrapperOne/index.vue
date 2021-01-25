@@ -15,7 +15,7 @@
           .table-item_colmun(
             v-for='(_item, _index) in item.datas', 
             :key='_index', 
-            :style='{"width": rem ? `${widthArr[_index+1]}rem` : `${widthArr[_index+1] * 100}px`, "color": `${_index == 0 && fontColor[_index]}`}'
+            :style='{"width": rem ? `${widthArr[_index+1]}rem` : `${widthArr[_index+1] * 100}px`, "color": `${_index == 0 && fontColor[index]}`}'
           ) 
             slot(:name='`item${_index+1}`', :data='{item: _item, index: (_index + 1)}') {{ _item }}
 
